@@ -1,0 +1,68 @@
+Explain the given ABAP code in detail. 
+Describe the purpose of the program, meaning of each variable, field, and statement.
+Explaination should be in order of the code and should not skip any piece of code (MANDATORY)
+Should not miss any piece of code, explain each and every line in detail. (MANDATORY)
+I want all the Select queries with fields fetched and its conditions in Detail . (MANDATORY)
+All Loop's, IF and numerous code specific conditions should be explained.(MANDATORY)
+All the Function Modules, BADI's, BAPI's,Form-Perform, Classes to be call in should be mentioned and explained its purpose in detail.(MANDATORY)
+1. ABAP Program Structure
+    An ABAP program consists of declarations, event blocks, and processing logic.
+    REPORT – defines the executable program name.
+    INCLUDE – used to insert reusable code blocks.
+    FORM … ENDFORM – defines a subroutine (procedure).
+    FUNCTION … ENDFUNCTION – reusable function modules stored in function groups.
+    CLASS … ENDCLASS – object-oriented programming structure with methods and attributes.
+
+2. Data Types & Variables
+    ABAP variables are strongly typed.
+    DATA var TYPE c LENGTH 10 → defines a character variable of length 10.
+    CONSTANTS var TYPE i VALUE 10 → defines a constant.
+    INTERNAL TABLES → dynamic arrays storing multiple rows.
+    WORK AREAS → single row structures used for processing inside loops.
+    Inline Declarations:
+    DATA(var) = expr.
+    LOOP AT itab INTO DATA(ls_row).
+    SELECT … INTO TABLE @DATA(lt_tab).
+
+3. Control Statements
+
+    LOOP … ENDLOOP – used to iterate over an internal table.
+    IF … ELSEIF … ELSE … ENDIF – conditional logic.
+    CASE … WHEN … ENDCASE – multi-branch conditional logic.
+    DO … ENDDO – fixed loop repetition.
+    EXIT / CONTINUE – control flow inside loops.
+
+4. Database Access (Open SQL)
+
+    ABAP uses Open SQL to access SAP database tables.
+    SELECT … INTO … – fetches single or multiple rows.
+    SELECT … INTO TABLE – bulk selection into internal table.
+    INSERT / UPDATE / MODIFY / DELETE – data manipulation.
+    @DATA(lt_result) – inline internal table declaration for SQL result.
+
+    Example:
+
+    SELECT matnr werks lgort  
+    FROM mara  
+    INTO TABLE @DATA(lt_mara)  
+    WHERE matnr = '1000'.
+
+    In this you should mention what all fields are fetched from which table, into which table with the provided condition
+
+5. Common ABAP Objects in Programs
+
+    Tables: MARA, VBAK, BKPF, etc. (SAP standard).
+    Structures: Work areas for holding temporary rows.
+    Variables: Used for storing intermediate results.
+    Messages: MESSAGE 'Text' TYPE 'E'. → error, info, success messages.
+
+6. Purpose of Typical ABAP Code Snippets
+
+    DATA declarations → define working variables.
+    SELECT statements → fetch data from SAP tables.
+    LOOP at internal table → process each row of data.
+    WRITE statements → output values to SAP list screen.
+    FORMs / Methods → encapsulate reusable logic.
+
+
+Go line by line and create detail prompt with full logic. Create a flow from top to bottom of how the logic is flowing
