@@ -251,7 +251,7 @@ async def get_job_status(job_id: str):
     elif job["status"] == "failed":
         return {"status": "failed", "error": job.get("error")}
     elif job["status"] == "done":
-        return {"status": "done", "result": job.get("result")}
+        return job.get("result", [])
     else:
         return {"status": "unknown"}
 
